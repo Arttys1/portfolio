@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Arnaud Curie</title>
+</head>
+<body id="body">
+    <div id="cursor"></div>
+    <nav id="navigationBar">
+        <ul>
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#presentation">About</a></li>
+            <li><a href="#projets">Projects</a></li>
+            <li><a href="#Skills">Skills</a></li>
+            <li><a href="#Contact">Contact</a></li>
+        </ul>
+    </nav>    
+
+    <section id="Home">
+        <div id="textOnCanvas">
+            <p id="hi">hi! my name is</p>
+            <h1 id="iam">Arnaud Curie. </br> I'm a Sofware Engineer</h1>
+            <a href="#presentation"><button id="getStarted">Get Started ⏷</button></a>
+            <!---canvas to draw particles and cool effect-->
+            <canvas id="particleContainer"></canvas>
+        </div>
+    </section>
+
+    <section id="presentation">
+        <h2>Who am I ?</h2>
+        <div class="row">
+            <p>
+                Hi! My name is Arnaud Curie, I am a 21 years old french student and I like to develop things in my free time.
+                I am currently studying at the engineering school Esirem at Dijon. loremIpsumloremIpsumloremIpsumloremIpsumlorem
+                IpsumloremIpsumloremIpsumloremIpsumloremIpsumloremIpsumlo
+                remIpsumloremIpsumloremIpsumloremIpsumloremIpsumloremIpsumloremIpsumloremIpsumloremIpsumloremIpsumloremIpsumloremIpsum
+            </p>
+            <div id="imgPresentation" class="col">        
+                <img id="author"src="image/MazeSolver.PNG" alt="portrait of the author"/>
+            </div>
+        </div>
+    </section>
+
+    <section id="projets">
+        <div class="backgroundTransform"></div>
+        <h2>Some of my projects</h2>
+
+        <section id="buttonsSort">
+            <span>Sort by :</span> 
+            <button class="projectButton active" id="defaultSort">Default</button>
+            <button class="projectButton unactive" id="DateSort">Date</button>
+            <button class="projectButton unactive" id="SchoolSort">School</button>
+            <button class="projectButton unactive" id="ProfessionalSort">Professional</button>
+            <button class="projectButton unactive" id="PersonnalSort">Personnal</button>
+        </section>
+
+    
+        <section id="projectContainer">
+        <!-----here will be the projects------>    
+        </section>  
+    </section>
+
+    <section id="Skills">
+        <h2>My skills</h2>
+
+        <div id="div_button_skills" class="row">
+            <div id="sortSkill" class="col">
+                <ul>
+                    <li class="active"><button id="button_default" class="skillButton active">Default</button></li>
+                    <li><button id="button_software" class="skillButton unactive">Software development</button></li>            
+                    <li><button id="button_db" class="skillButton unactive">DataBase</button></li>
+                    <li><button id="button_web" class="skillButton unactive">Web development</button></li>
+                </ul>
+            </div>
+
+            <div id="skillsContainer" class="col">
+                <!-----here will be the skills------>
+            </div>
+        </div>
+    </section>
+
+    <section id="Contact">
+        <div class="backgroundTransform"></div>
+        <h2>Contact me</h2>
+
+        <div id="logoContact">
+            <a href="https://www.linkedIn.com"><img src="image/linkedIn.png" alt="linkdin logo"/></a>
+            <a href="https://www.github.com/Arttys1"><img src="image/github.png" alt="github logo"/></a>
+            <a href="mailto:arnaud.curie.ac@gmail.com"><img src="image/email.png" alt="email logo"/></a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="row">
+            <a class="col row" href="https://www.github.com">
+                <img src="image/github.png"/>
+                <span>Lien vers le github du projet</span>
+            </a>
+            <p class="col">Made with HTML/CSS, TS and &hearts; by Arnaud Curie</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+
+<script src="script/project/Project.js"></script>
+<script src="script/project/Projects.js"></script>
+<script src="script/project/projectSorter/ProjectSorter.js"></script>
+<script src="script/project/projectSorter/PersonnalSorter.js"></script>
+<script src="script/project/projectSorter/ProfessionelSorter.js"></script>
+<script src="script/project/projectSorter/SchoolSorter.js"></script>
+<script src="script/project/projectSorter/DateSorter.js"></script>
+<script src="script/skills/skillSorter/DBSorter.js"></script>
+<script src="script/skills/skillSorter/SkillSorter.js"></script>
+<script src="script/skills/skillSorter/SoftwareSorter.js"></script>
+<script src="script/skills/skillSorter/WebSorter.js"></script>
+<script src="script/vue/ProjectVue.js"></script>
+<script src="script/skills/Skill.js"></script>
+<script src="script/skills/Skills.js"></script>
+<script src="script/vue/SkillVue.js"></script>
+<script src="script/canva/Canvas.js"></script>
+<script src="script/canva/Particle.js"></script>
+<script src="script/ScrollChecker.js"></script>
+<script src="script/Cursor.js"></script>
+<script src="script/app.js"></script>
+
