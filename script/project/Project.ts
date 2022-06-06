@@ -32,17 +32,15 @@ class Project
     public putHTML() : HTMLDivElement {
         let div = document.createElement("div");
         div.classList.add("project");
-        div.classList.add("row");
 
         let img = document.createElement("img");
-        img.classList.add("col");
         img.classList.add("imgProjet");
         img.src = this.imagePath;
         img.alt = "project illustration";
         div.appendChild(img);
 
         let col = document.createElement("div");
-        col.classList.add("col");
+        col.classList.add("textProject");
         
         let h2 = document.createElement("h2");
         h2.innerHTML = this.name;
