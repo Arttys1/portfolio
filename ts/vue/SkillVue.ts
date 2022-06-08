@@ -9,6 +9,29 @@ class SkillVue
         this.skills = new Skills();
         this.fillSkills();
         this.display(SkillType.DEFAULT);
+        
+        //add event to sort skills
+        window.addEventListener("load", () => {         
+            document.getElementById("button_default")?.addEventListener("click", function() {
+                skillVue.display(SkillType.DEFAULT);
+                skillVue.activeButton(this);
+            });
+
+            document.getElementById("button_software")?.addEventListener("click", function() {
+                skillVue.display(SkillType.SOFTWARE_DEVELOPMENT);
+                skillVue.activeButton(this);
+            });
+
+            document.getElementById("button_db")?.addEventListener("click", function() {
+                skillVue.display(SkillType.DATABASE);
+                skillVue.activeButton(this);
+            });
+
+            document.getElementById("button_web")?.addEventListener("click", function() {
+                skillVue.display(SkillType.WEB_DEVELOPMENT);
+                skillVue.activeButton(this);
+            });
+        });
     }
 
     display(skillType : SkillType) : void

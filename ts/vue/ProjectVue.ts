@@ -4,15 +4,49 @@ class ProjectVue
 {
     private projects : Projects;    
     private lastSorter: SorterType;
-    private showMore : boolean;
 
     constructor()
     {
         this.projects = new Projects();
         this.lastSorter = SorterType.DEFAULT;
-        this.showMore = true;
         this.fillProjects();
         this.displaySome(SorterType.DEFAULT, 4);
+
+
+        window.addEventListener("load", () => {            
+            document.getElementById("defaultSort")?.addEventListener("click", function () {
+                projectVue.displaySome(SorterType.DEFAULT, 4);
+                projectVue.buttonActive(this);
+                projectVue.showMore();
+            });
+            document.getElementById("DateSort")?.addEventListener("click", function () {
+                projectVue.displaySome(SorterType.DATE, 4);
+                projectVue.buttonActive(this);
+                projectVue.showMore();
+            });
+            document.getElementById("PersonnalSort")?.addEventListener("click", function () {
+                projectVue.displaySome(SorterType.PERSONNAL, 4);
+                projectVue.buttonActive(this);
+                projectVue.showMore();
+            });
+
+            document.getElementById("ProfessionalSort")?.addEventListener("click", function () {
+                projectVue.displaySome(SorterType.PROFESSIONAL, 4);
+                projectVue.buttonActive(this);
+                projectVue.showMore();
+            });
+
+            document.getElementById("SchoolSort")?.addEventListener("click", function () {
+                projectVue.displaySome(SorterType.SCHOOL, 4);
+                projectVue.buttonActive(this);
+                projectVue.showMore();
+            });
+
+            document.getElementById("showMore")?.addEventListener("click", function (){
+                projectVue.showLess();            
+                projectVue.display(projectVue.LastSorter);
+            });
+        });
         
     }
 
@@ -118,7 +152,7 @@ class ProjectVue
         this.clearScreen();
         this.sort(typeSorter).putHTMLSome(document.getElementById(projectContainer) as HTMLElement, number);
     }
-    
+
     public clearScreen() : void
     {
         let section = document.getElementById(projectContainer);
@@ -155,6 +189,32 @@ class ProjectVue
         }
     
         return sorted;
+    }
+
+    public showLess() : void{
+        let button : HTMLElement = document.getElementById("showMore") as HTMLElement;
+        let showLess : HTMLElement = document.createElement("button") as HTMLElement;
+        showLess.id = "showLess";
+        showLess.innerHTML = "Show less";
+        showLess.classList.add("showProjectButton");
+        showLess.addEventListener("click", () => {
+            this.showMore();
+            this.displaySome(this.LastSorter, 4);
+        });
+        button.parentNode?.replaceChild(showLess, button);
+    }
+
+    public showMore() : void{
+        let button : HTMLElement = document.getElementById("showLess") as HTMLElement;
+        let showMore : HTMLElement = document.createElement("button") as HTMLElement;
+        showMore.id = "showMore";
+        showMore.innerHTML = "Show more !";
+        showMore.classList.add("showProjectButton");
+        showMore.addEventListener("click", () => {
+            this.showLess();            
+            this.display(this.LastSorter);
+        });
+        button.parentNode?.replaceChild(showMore, button);        
     }
 
     public get LastSorter(): SorterType {
