@@ -42,6 +42,4 @@ function displayTextHome() : void {
     }, 2000);
 }
 
-
-
 window.addEventListener("load", main);

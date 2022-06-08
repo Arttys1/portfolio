@@ -18,7 +18,7 @@ class Skill
 
         let icon = document.createElement('img');
         icon.src = this.iconPath;
-        icon.alt = "skill illutration";
+        icon.alt = "skill illustration";
         skill.appendChild(icon);
 
         let skillName = document.createElement('p');
@@ -68,6 +68,7 @@ enum SkillType
     SOFTWARE_DEVELOPMENT = "Software Development",
     WEB_DEVELOPMENT = "Web Development",
     DATABASE = "Database",
+    COMPUTER_GRAPHIC = "Computer Graphic",
 
     DEFAULT = "Default",
 }

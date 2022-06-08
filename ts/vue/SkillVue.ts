@@ -31,6 +31,11 @@ class SkillVue
                 skillVue.display(SkillType.WEB_DEVELOPMENT);
                 skillVue.activeButton(this);
             });
+
+            document.getElementById("button_graphic")?.addEventListener("click", function() {
+                skillVue.display(SkillType.COMPUTER_GRAPHIC);
+                skillVue.activeButton(this);
+            });
         });
     }
 
@@ -48,7 +53,8 @@ class SkillVue
         {
             case SkillType.SOFTWARE_DEVELOPMENT: sortedSkills.sort(new SoftwareSorter()); break;
             case SkillType.DATABASE: sortedSkills.sort(new DBSorter()); break;
-            case SkillType.WEB_DEVELOPMENT: sortedSkills.sort(new WebSorter()); break; 
+            case SkillType.WEB_DEVELOPMENT: sortedSkills.sort(new WebSorter()); break;
+            case SkillType.COMPUTER_GRAPHIC: sortedSkills.sort(new GraphicSorter()); break; 
             case SkillType.DEFAULT:  break;
             default: 
                 throw new Error("Unknown skill type");
@@ -81,7 +87,7 @@ class SkillVue
             container.innerHTML = "";
     }
 
-    private async fillSkills() : Promise<void>
+    private fillSkills() : void
     {
         let java : Skill = new Skill("Java", SkillType.SOFTWARE_DEVELOPMENT, "image/skills/java.png");
         this.skills.add(java);
@@ -91,6 +97,12 @@ class SkillVue
 
         let cpp : Skill = new Skill("C++", SkillType.SOFTWARE_DEVELOPMENT, "image/skills/cpp.png");
         this.skills.add(cpp);
+
+        let git : Skill = new Skill("Git", SkillType.SOFTWARE_DEVELOPMENT, "image/skills/git.png");
+        this.skills.add(git);
+
+        let svn : Skill = new Skill("SVN", SkillType.SOFTWARE_DEVELOPMENT, "image/skills/svn.png");
+        this.skills.add(svn);
 
         let css : Skill = new Skill("CSS", SkillType.WEB_DEVELOPMENT, "image/skills/css.png");
         this.skills.add(css);
@@ -103,6 +115,21 @@ class SkillVue
 
         let ts : Skill = new Skill("TypeScript", SkillType.WEB_DEVELOPMENT, "image/skills/typescript.svg");
         this.skills.add(ts);
+
+        let php : Skill = new Skill("PHP", SkillType.WEB_DEVELOPMENT, "image/skills/php.png");
+        this.skills.add(php);
+
+        let javaFx : Skill = new Skill("JavaFX", SkillType.COMPUTER_GRAPHIC, "image/skills/javafx.jpg");
+        this.skills.add(javaFx);
+
+        let WPF : Skill = new Skill("WPF", SkillType.COMPUTER_GRAPHIC, "image/skills/wpf.png");
+        this.skills.add(WPF);
+
+        let Qt : Skill = new Skill("Qt", SkillType.COMPUTER_GRAPHIC, "image/skills/qt.png");
+        this.skills.add(Qt);
+
+        let OpenGL : Skill = new Skill("OpenGL", SkillType.COMPUTER_GRAPHIC, "image/skills/opengl.png");
+        this.skills.add(OpenGL);
 
         let sql : Skill = new Skill("SQL", SkillType.DATABASE, "image/skills/sql.png");
         this.skills.add(sql);
