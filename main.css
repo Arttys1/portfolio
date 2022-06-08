@@ -3,7 +3,7 @@
     /*variable css*/
     --color-main : skyblue;
     --color-second : whitesmoke;
-    --color-third : #6fa8dc;
+    --color-third : #082131;
 }
 
 html{
@@ -147,6 +147,8 @@ h1{
     border-radius: 10px;
     padding-bottom: 10px;
     position: relative; 
+    display : flex;
+    flex-direction: column;
 }
 
 #projets h2
@@ -309,6 +311,23 @@ h1{
     margin: 10px;
 }
 
+#showMore
+{
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--color-main);
+    border: 2px solid var(--color-second);
+    color: var(--color-second);
+    
+}
+
+#showMore:hover
+{
+    font-size: 25px;
+    transition: font-size 0.5s;
+    cursor: pointer;
+}
+
 /*//////////////////////////WHO_AM_I///////////////////////////*/
 
 #presentation
@@ -360,8 +379,6 @@ h1{
     list-style-type: none;
     width: 60%;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
 }
 
 #navigationBar li
@@ -370,6 +387,10 @@ h1{
     margin-right: 5%;
     font-weight: bold;
     font-size: 20px;
+}
+#navBarIcon
+{
+    display: none;
 }
 
 #navigationBar a
@@ -386,6 +407,24 @@ h1{
 .Navunactive
 {
     top : -100px;
+}
+
+@media screen and (max-width: 600px)
+{
+    #navBarIcon
+    {
+        display: relative;
+        color: var(--color-second);
+        font-size: 2em;
+    } 
+    #navigationBar ul
+    {
+        justify-content: center;
+    }
+    #navigationBar li:not(:first-child)
+    {
+        display: none;
+    }
 }
 
 
