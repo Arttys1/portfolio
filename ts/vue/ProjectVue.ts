@@ -201,7 +201,10 @@ class ProjectVue
             this.showMore();
             this.displaySome(this.LastSorter, 4);
         });
-        button.parentNode?.replaceChild(showLess, button);
+        if(button != null)
+        {
+            button.parentNode?.replaceChild(showLess, button);
+        }
     }
 
     public showMore() : void{
@@ -214,7 +217,10 @@ class ProjectVue
             this.showLess();            
             this.display(this.LastSorter);
         });
-        button.parentNode?.replaceChild(showMore, button);        
+        if(button != null)
+        {
+            button.parentNode?.replaceChild(showMore, button);   
+        }     
     }
 
     public get LastSorter(): SorterType {
