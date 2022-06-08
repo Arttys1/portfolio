@@ -29,17 +29,28 @@ class Projects
 
     public putHTML(element : HTMLElement) : void
     {
+        this.putHTMLSome(element, this.projects.length);
+    }
+
+    public putHTMLSome(element : HTMLElement, number : number) : void
+    {
+        let max : number = Math.min(this.projects.length, number);
         let posY : number = window.scrollY;
-        for(let i : number = 0; i < this.projects.length; i++)
+        for(let i : number = 0; i < max; i++)
         {
             let div : HTMLDivElement = this.projects[i].putHTML();
             element.appendChild(div);
 
-            //if it's the first or we can see it, we animate it
-            if(posY > div.getBoundingClientRect().top)
-            {
-                div.style.transform = "translateY(10%)";
-            }
+            this.checkAnimation(posY, div);
+        }
+    }
+
+    private checkAnimation(posY : number, div : HTMLDivElement) : void
+    {
+        //if it's the first or we can see it, we animate it
+        if(posY > div.getBoundingClientRect().top)
+        {
+            div.style.transform = "translateY(10%)";
         }
     }
 

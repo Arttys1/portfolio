@@ -9,35 +9,33 @@ var timerGenerateParticles : number;
 //entry point of the application
 function main() : void {
 
-    document.getElementById("getStarted")?.addEventListener("click", ()=>{
-        console.log("mooove");
-        window.moveTo(0, 2000);
-    });
-
     //add event on the button to sort the project list
     document.getElementById("defaultSort")?.addEventListener("click", function () {
-        projectVue.display(SorterType.DEFAULT);
+        projectVue.displaySome(SorterType.DEFAULT, 4);
         projectVue.buttonActive(this);
     });
     document.getElementById("DateSort")?.addEventListener("click", function () {
-        projectVue.display(SorterType.DATE);
+        projectVue.displaySome(SorterType.DATE, 4);
         projectVue.buttonActive(this);
     });
     document.getElementById("PersonnalSort")?.addEventListener("click", function () {
-        projectVue.display(SorterType.PERSONNAL);
+        projectVue.displaySome(SorterType.PERSONNAL, 4);
         projectVue.buttonActive(this);
     });
 
     document.getElementById("ProfessionalSort")?.addEventListener("click", function () {
-        projectVue.display(SorterType.PROFESSIONAL);
+        projectVue.displaySome(SorterType.PROFESSIONAL, 4);
         projectVue.buttonActive(this);
     });
 
     document.getElementById("SchoolSort")?.addEventListener("click", function () {
-        projectVue.display(SorterType.SCHOOL);
+        projectVue.displaySome(SorterType.SCHOOL, 4);
         projectVue.buttonActive(this);
     });
 
+    document.getElementById("showMore")?.addEventListener("click", function (){
+        projectVue.display(projectVue.LastSorter);
+    });
 
     //add event to sort skills
     document.getElementById("button_default")?.addEventListener("click", function() {

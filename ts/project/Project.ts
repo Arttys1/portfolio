@@ -56,15 +56,17 @@ class Project
         keyword.innerHTML = this.keywords;
         col.appendChild(keyword);
 
-        let githubLink = document.createElement("a");
-        let github = document.createElement("img");
-        github.src = "image/github.png";
-        github.alt = "github icon";
-        github.classList.add("iconGithub");
-        githubLink.appendChild(github);
-        githubLink.href = this.link;
-        col.appendChild(githubLink);
-
+        if(this.link !== "")
+        {
+            let githubLink = document.createElement("a");
+            let github = document.createElement("img");
+            github.src = "image/github.png";
+            github.alt = "github icon";
+            github.classList.add("iconGithub");
+            githubLink.appendChild(github);
+            githubLink.href = this.link;
+            col.appendChild(githubLink);
+        }
         let year = document.createElement("p");
         year.classList.add("projectDate");
 
