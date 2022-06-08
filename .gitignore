@@ -1,0 +1,2 @@
+#We ignore js files, we just want ts files
+*.js
