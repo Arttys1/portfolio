@@ -129,9 +129,9 @@ class ProjectVue
 
         let libGraphic = new Project("LibGraphic", ProjectType.PERSONNAL);
         libGraphic.Description = "This is a little 3D graphic library. "
-        + "It's a personal project where i can learn openGL."
-        + "It's written in C++ and use GLFW and GLEW libraries to manipulate OpenGL."
-        + "I loved writing this library because i learned a lot about graphics programming.";
+        + "It's a personal project where i can learn openGL. "
+        + "It's written in C++ and use GLFW and GLEW libraries to manipulate OpenGL. "
+        + "Despite it uninspired name, I loved writing this library because i learned a lot about graphics programming.";
 
         libGraphic.ImagePath = "image/libGraphic.PNG";
         libGraphic.Keywords = "C++, library, OpenGL, GLFW, GLEW";

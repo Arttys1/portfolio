@@ -390,7 +390,7 @@ h1{
 }
 #navBarIcon
 {
-    display: none;
+    color : transparent;
 }
 
 #navigationBar a
