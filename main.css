@@ -406,7 +406,7 @@ h1{
 
 .Navunactive
 {
-    top : -1000px;
+    top : -100%;
 }
 
 @media screen and (max-width: 600px)

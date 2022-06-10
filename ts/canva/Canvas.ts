@@ -1,5 +1,5 @@
 //threshold for the distance where we draw a line between two particles
-const thresholdDistanceParticle : number = (window.innerWidth / 8) + 50;
+const thresholdDistanceParticle : number = (window.innerWidth / 7) + 50;
 const canvasHeight : number = window.innerHeight;
 const offsetCanvas : number = 50;   //limit where we remove particles 
 const NumberParticleLimit = 50;

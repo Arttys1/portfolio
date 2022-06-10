@@ -7,18 +7,21 @@ class NavBar
         this.navBar = document.getElementById("navBar") as HTMLUListElement;
         this.open = false;
         let icon : HTMLElement | null = document.getElementById("navBarIcon");
-        icon?.addEventListener("click", () => {
-            this.openCloseNavBar();
-        });
-        icon?.addEventListener("touch", () => {
-            this.openCloseNavBar();
-        });
-
-        for(let i : number= 0; i < this.navBar.children.length; i++)
+        if(window.innerWidth <= 600)
         {
-            this.navBar.children[i]?.children[0]?.addEventListener("click", () => {
-                this.closeNavBar();
+            icon?.addEventListener("click", () => {
+                this.openCloseNavBar();
             });
+            icon?.addEventListener("touch", () => {
+                this.openCloseNavBar();
+            });
+
+            for(let i : number= 0; i < this.navBar.children.length; i++)
+            {
+                this.navBar.children[i]?.children[0]?.addEventListener("click", () => {
+                    this.closeNavBar();
+                });
+            }
         }
         
     }    
