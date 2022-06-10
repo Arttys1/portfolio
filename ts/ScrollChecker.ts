@@ -33,27 +33,6 @@ class ScrollChecker
             }
         }
 
-        //navbar mecanics
-        let nav : HTMLElement = document.getElementById("navigationBar") as HTMLElement;
-        if(Ypos == 0) {
-            nav.style.position = "relative";
-            nav.style.backgroundColor = "transparent";
-        }
-        else if (Ypos < this.lastScrollTop)
-        {
-            nav.style.position = "fixed";
-            nav.classList.add("Navactive");
-            nav.classList.remove("Navunactive");
-            nav.style.backgroundColor = "#082131";
-        } 
-        else if(Ypos > this.lastScrollTop)
-        {
-            nav.style.position = "fixed";
-            nav.classList.remove("Navactive");
-            nav.classList.add("Navunactive");
-            nav.style.backgroundColor = "#082131";
-        }
-
         this.lastScrollTop = Ypos <= 0 ? 0 : Ypos; // for negative scrolling
     }
 }
