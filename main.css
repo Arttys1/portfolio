@@ -7,7 +7,7 @@
 }
 
 html{
-    cursor: none;
+    /*cursor: none;*/
     overflow-x: hidden; /*disable horizontal scrollbar*/
 }
 body{

@@ -7,7 +7,7 @@ class Cursor
     public constructor()
     {
         this.cursor = document.getElementById("cursor") as HTMLDivElement;
-        this.cursor.blur();
+        this.cursor?.blur();
         window.addEventListener("mousemove", this.moveCursor);
         this.x = 0;
         this.y = 0;
@@ -15,6 +15,9 @@ class Cursor
 
     public moveCursor = (e : MouseEvent) =>
     {
+        this.x = e.clientX;
+        this.y = e.clientY;
+        /* //disable cursor
         if(this.cursor != null)
         {  
             this.cursor.blur(); 
@@ -22,7 +25,7 @@ class Cursor
             this.y = e.clientY - this.cursor.clientHeight / 2;
             this.cursor.style.transform = `translate3d(${this.x}px, ${this.y}px , 0)`;
             //console.log(e.clientX + " " + e.clientY);
-        }
+        }*/
         
     }
 
