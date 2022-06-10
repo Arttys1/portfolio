@@ -28,17 +28,17 @@ function displayTextHome() : void {
     setTimeout(()=>{
         let p = document.getElementById("hi") as HTMLElement;
         p.style.opacity = "1";
-    }, 1000);
+    }, 500);
 
     setTimeout(()=>{
         let p = document.getElementById("iam") as HTMLElement;
         p.style.opacity = "1";
-    }, 1500);
+    }, 1000);
 
     setTimeout(()=>{
         let p = document.getElementById("getStarted") as HTMLElement;
         p.style.opacity = "1";
-    }, 2000);
+    }, 1500);
 }
 
 window.addEventListener("load", main);

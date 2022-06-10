@@ -7,7 +7,6 @@ class Cursor
     public constructor()
     {
         this.cursor = document.getElementById("cursor") as HTMLDivElement;
-        this.cursor?.blur();
         window.addEventListener("mousemove", this.moveCursor);
         this.x = 0;
         this.y = 0;
