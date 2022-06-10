@@ -3,8 +3,7 @@ const projectVue : ProjectVue = new ProjectVue();
 const skillVue : SkillVue = new SkillVue();
 const canvas : Canvas = new Canvas("particleContainer");
 const scrollChecker : ScrollChecker = new ScrollChecker();
-var timerCanvasID : number;
-var timerGenerateParticles : number;
+const navBar : NavBar = new NavBar();
 
 //entry point of the application
 function main() : void {
@@ -13,13 +12,13 @@ function main() : void {
 
     canvas.generateParticles(10);
     //add event to update the canvas
-    timerCanvasID = window.setInterval(() => {
+    window.setInterval(() => {
         canvas.update();
         canvas.draw();
     }, 33); //33ms = 30fps
 
     //add event to generate particles
-    timerGenerateParticles = window.setInterval(() => {
+    window.setInterval(() => {
         canvas.generateParticles(10);
     }, 5000);
 }

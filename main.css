@@ -406,7 +406,7 @@ h1{
 
 .Navunactive
 {
-    top : -100px;
+    top : -1000px;
 }
 
 @media screen and (max-width: 600px)
@@ -419,7 +419,16 @@ h1{
     } 
     #navigationBar ul
     {
+        width: 100%;
         justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #navigationBar li
+    {
+        font-size: 2em;   
+        padding-bottom: 10px;
     }
     #navigationBar li:not(:first-child)
     {

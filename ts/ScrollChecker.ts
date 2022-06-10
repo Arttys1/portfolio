@@ -8,6 +8,7 @@ class ScrollChecker
     constructor()
     {        
         window.addEventListener("scroll", this.scrollChecker);
+        window.addEventListener("touchmove", this.scrollChecker);
     }
     
     private scrollChecker()
