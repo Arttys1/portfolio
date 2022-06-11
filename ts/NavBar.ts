@@ -53,7 +53,11 @@ class NavBar
             nav.classList.remove("Navactive");
             nav.classList.add("Navunactive");
             nav.style.backgroundColor = "#082131";
-            this.closeNavBar();
+            
+            if(window.innerWidth <= 600)
+            {
+                this.closeNavBar();
+            }
         }
 
         this.lastScrollTop = Ypos <= 0 ? 0 : Ypos; // for negative scrolling
