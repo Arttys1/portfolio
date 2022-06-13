@@ -1,6 +1,5 @@
 //threshold for the distance where we draw a line between two particles
 const thresholdDistanceParticle : number = (window.innerWidth / 7) + 50;
-const canvasHeight : number = window.innerHeight;
 const offsetCanvas : number = 50;   //limit where we remove particles 
 const NumberParticleLimit = 50;
 
@@ -51,8 +50,8 @@ class Canvas
         
         //draw gradient background
         var gradient = this.context.createRadialGradient(
-            this.canvas.width / 2, canvasHeight - 60, 200,   //inner cercle
-            this.canvas.width / 2, canvasHeight - 60, 400); //outer cercle
+            this.canvas.width / 2, this.canvas.height - 60, 200,   //inner cercle
+            this.canvas.width / 2, this.canvas.height - 60, 400); //outer cercle
         gradient.addColorStop(0, "#082131");
         gradient.addColorStop(1, "#030D13");
 
@@ -110,9 +109,10 @@ class Canvas
     public updateSizeCanvas() : void
     {
         let body : HTMLElement = document.getElementById("body") as HTMLElement;
+        let rect : DOMRect = document.getElementById("Home")?.getBoundingClientRect() as DOMRect;
         
         this.canvas.width = body.clientWidth;
-        this.canvas.height = canvasHeight;
+        this.canvas.height = rect.top + rect.height;
     }
 
     public addParticle(particle: Particle) : void
