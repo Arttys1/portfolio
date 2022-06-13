@@ -7,10 +7,12 @@ class NavBar
     {
         this.navBar = document.getElementById("navBar") as HTMLUListElement;
         this.open = false;
-        let icon : HTMLElement | null = document.getElementById("navBarIcon");
-        this.lastScrollTop = 0;
-        if(window.innerWidth <= 600)
+        this.lastScrollTop = 0;   
+
+        let width : number = document.getElementById("body")?.clientWidth as number;
+        if(width <= 600)
         {
+            let icon : HTMLElement | null = document.getElementById("navBarIcon");
             icon?.addEventListener("click", () => {
                 this.openCloseNavBar();
             });
@@ -27,13 +29,14 @@ class NavBar
         }
 
         window.addEventListener("scroll", ()=>{this.navBarMecanics()});
-        window.addEventListener("touch", ()=>{this.navBarMecanics()});
+        window.addEventListener("touchmove", ()=>{this.navBarMecanics()});
         
     }    
 
     private navBarMecanics()
     {
         let Ypos : number = window.scrollY;
+        
         //navbar mecanics
         let nav : HTMLElement = document.getElementById("navigationBar") as HTMLElement;
         if(Ypos == 0) { //case where we are at the top of the page
@@ -47,7 +50,7 @@ class NavBar
             nav.classList.remove("Navunactive");
             nav.style.backgroundColor = "#082131";
         } 
-        else if(Ypos > this.lastScrollTop)  //case where we are scrolling down
+        else if(Ypos >= this.lastScrollTop)  //case where we are scrolling down
         {
             nav.style.position = "fixed";
             nav.classList.remove("Navactive");
