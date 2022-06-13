@@ -108,11 +108,10 @@ class Canvas
 
     public updateSizeCanvas() : void
     {
-        let body : HTMLElement = document.getElementById("body") as HTMLElement;
         let rect : DOMRect = document.getElementById("Home")?.getBoundingClientRect() as DOMRect;
         
-        this.canvas.width = body.clientWidth;
-        this.canvas.height = rect.top + rect.height;
+        this.canvas.width = rect.right;
+        this.canvas.height = rect.height;
     }
 
     public addParticle(particle: Particle) : void
