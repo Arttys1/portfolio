@@ -98,6 +98,12 @@ class SkillVue
         let cpp : Skill = new Skill("C++", SkillType.SOFTWARE_DEVELOPMENT, "image/skills/cpp.png");
         this.skills.add(cpp);
 
+        let c : Skill = new Skill("C", SkillType.SOFTWARE_DEVELOPMENT, "image/skills/c.png");
+        this.skills.add(c);
+
+        let python : Skill = new Skill("Python", SkillType.SOFTWARE_DEVELOPMENT, "image/skills/python.png");
+        this.skills.add(python);
+
         let git : Skill = new Skill("Git", SkillType.SOFTWARE_DEVELOPMENT, "image/skills/git.png");
         this.skills.add(git);
 
@@ -119,7 +125,7 @@ class SkillVue
         let php : Skill = new Skill("PHP", SkillType.WEB_DEVELOPMENT, "image/skills/php.png");
         this.skills.add(php);
 
-        let javaFx : Skill = new Skill("JavaFX", SkillType.COMPUTER_GRAPHIC, "image/skills/javafx.jpg");
+        let javaFx : Skill = new Skill("JavaFX", SkillType.COMPUTER_GRAPHIC, "image/skills/javafx.png");
         this.skills.add(javaFx);
 
         let WPF : Skill = new Skill("WPF", SkillType.COMPUTER_GRAPHIC, "image/skills/wpf.png");
